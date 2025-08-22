@@ -21,7 +21,7 @@ function CreateRepo() {
       return;
     }
 
-    const response = await axios.post("http://localhost:3000/repo/create", {
+    const response = await axios.post("https://gitlite.onrender.com/repo/create", {
       owner: ownerId,
       name,
       description,
