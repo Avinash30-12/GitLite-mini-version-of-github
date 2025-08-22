@@ -97,19 +97,21 @@ const Dashboard=()=> {
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
-          {Array.isArray(searchResults) &&
-               searchResults.map((repo) => (
-                 <div key={repo._id}>
-                  <div>
-                    <h4>{repo.name}</h4>
-                   <h4>{repo.description}</h4>
-                  </div>
-                   <button className="delete-btn" onClick={() => handleDelete(repo._id)}>
-                      Delete
-                    </button>
-                 </div>
-               ))
-          }
+          {Array.isArray(searchResults) && searchResults.length > 0 ? (
+                    searchResults.map((repo) => (
+                      <div key={repo._id}>
+                        <div>
+                          <h4>{repo.name}</h4>
+                          <h4>{repo.description}</h4>
+                        </div>
+                        <button className="delete-btn" onClick={() => handleDelete(repo._id)}>
+                          Delete
+                        </button>
+                      </div>
+                    ))
+                  ) : (
+                    <p className="no-repos-msg">🚀 You don't have any repositories yet.</p>
+                  )}
                <div className="main-feed">
                  <Feed />
                </div>
