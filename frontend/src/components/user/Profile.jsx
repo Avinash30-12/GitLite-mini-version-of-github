@@ -8,7 +8,7 @@ import {useAuth} from "../../authContext"
 import "./profile.css";
 import "../dashboard/dashboard.css";
 
-import HeatMapProfile from "./heatMap";
+import HeatMapProfile from "./HeatMap";
 
 const Profile=() =>{
      const navigate = useNavigate();
