@@ -25,7 +25,7 @@ const Signup=() =>{
         try {
             setLoading(true);
             
-            const res = await axios.post("http://localhost:3000/signup" ,{
+            const res = await axios.post("https://gitlite.onrender.com/signup" ,{
                 email:email,
                 password:password,
                 username:username,
@@ -46,7 +46,7 @@ const Signup=() =>{
         }
     }
 
-  return (  // ✅ added return
+  return ( 
     <div className="login-wrapper">
       <div className="login-logo-container">
         <img className="logo-login" src={logo} alt="Logo" />
