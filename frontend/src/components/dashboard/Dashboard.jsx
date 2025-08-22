@@ -18,7 +18,7 @@ const Dashboard=()=> {
 
         const fetchRepositories = async ()=>{
             try{
-                 const response = await fetch(`http://localhost:3000/repo/user/${userId}`);
+                 const response = await fetch(`https://gitlite.onrender.com/repo/user/${userId}`);
                  const data = await response.json();
                  setRepositories(data.repositories || []); // fallback to []
             }catch (err) {
@@ -29,7 +29,7 @@ const Dashboard=()=> {
 
         const fetchSuggestedRepositories = async ()=>{
             try{
-                 const response = await fetch(`http://localhost:3000/repo/all`);
+                 const response = await fetch(`https://gitlite.onrender.com/repo/all`);
                  const data = await response.json();
                  setSuggestedRepositories(data);
             }catch (err) {
@@ -57,7 +57,7 @@ const Dashboard=()=> {
   if (!window.confirm("Are you sure you want to delete this repository?")) return;
 
   try {
-    const response = await axios.delete(`http://localhost:3000/repo/delete/${id}`);
+    const response = await axios.delete(`https://gitlite.onrender.com/repo/delete/${id}`);
 
     alert(response.data.message);
 
