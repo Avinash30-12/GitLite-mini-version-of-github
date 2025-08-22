@@ -21,7 +21,7 @@ function CreateRepo() {
       return;
     }
 
-    const response = await axios.post("https://gitlite.onrender.com/repo/create", {
+    const response = await axios.post("http://localhost:3000/repo/create", {
       owner: ownerId,
       name,
       description,
@@ -31,6 +31,8 @@ function CreateRepo() {
     setMessage(response.data.message);
     window.location.href ="/"
   } catch (error) {
+    //const msg = error.response?.data?.message || "Failed to create repository";
+    //alert(msg); // 🔥 flash message
     console.error("Error creating repo:", error);
     setMessage(error.response?.data?.message || "Something went wrong");
   }
@@ -42,6 +44,8 @@ function CreateRepo() {
       <p className="form-subtitle">
         A repository contains all project files, including revision history.
       </p>
+      {/* ✅ flash message */}
+      {message && <div className="flash-msg">{message}</div>}
 
       <form  onSubmit={handleSubmit} className="repo-form">
         {/* Name */}
