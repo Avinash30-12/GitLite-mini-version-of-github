@@ -22,7 +22,7 @@ const Profile=() =>{
       if (userId) {
         try {
           const response = await axios.get(
-            `http://localhost:3000/userProfile/${userId}`
+            `https://gitlite.onrender.com/userProfile/${userId}`
           );
           setUserDetails(response.data);
         } catch (err) {
