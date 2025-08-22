@@ -84,6 +84,17 @@
 .create-btn:hover {
   background: #2ea043;
 }
+.flash-msg {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.flash-msg {
+  background: #ffe0e0;
+  color: #b30000;
+}
 
 /* 🔹 Responsive Styling */
 @media (max-width: 768px) {
