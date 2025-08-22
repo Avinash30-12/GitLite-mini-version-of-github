@@ -32,7 +32,14 @@ async function createRepository(req,res){
               repository: result,
             });
     } catch (error) {
-        console.log(error);
+        if (error.code === 11000) {
+      return res.status(400).json({
+        message: "Repository name already exists. Please choose a different name.",
+      });
+    }
+
+    console.error("Error creating repository:", err);
+    res.status(500).json({ message: "Server error while creating repository" });
     }
 }
 async function getAllRepositories(req,res){
