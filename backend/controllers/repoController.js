@@ -11,6 +11,9 @@ async function createRepository(req,res){
             return res.status(400).json({message:"Repository name is required"});
         };
 
+        if (!owner || owner === "null") {
+             return res.status(400).json({ message: "Owner ID is required or invalid" });
+         }
         if(!mongoose.Types.ObjectId.isValid(owner)){
             return res.status(400).json({ error: "Invalid User ID!" });
         }
