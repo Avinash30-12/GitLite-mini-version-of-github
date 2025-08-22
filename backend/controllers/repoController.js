@@ -41,7 +41,7 @@ async function createRepository(req,res){
       });
     }
 
-    console.error("Error creating repository:", err);
+    console.error("Error creating repository:", error);
     res.status(500).json({ message: "Server error while creating repository" });
     }
 }
