@@ -1,0 +1,152 @@
+/* General page wrapper */
+.profile-page-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap; /* makes it responsive */
+  color: white;
+}
+/* ---------------- LOGOUT BUTTON ---------------- */
+#logout {
+  background-color: #d73a49; /* GitHub red for destructive actions */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+#logout:hover {
+  background-color: #b92534;
+  transform: translateY(-2px);
+}
+
+/* Active click effect */
+#logout:active {
+  transform: scale(0.95);
+}
+
+/* Mobile responsive tweak */
+@media (max-width: 600px) {
+  #logout {
+    bottom: 20px !important;
+    right: 20px !important;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ---------------- PROFILE SECTION ---------------- */
+.user-profile-section {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  background: #161b22; /* dark GitHub background */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Profile image placeholder */
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #30363d; /* gray placeholder */
+  margin: 0 auto 1rem auto;
+  border: 2px solid #444c56;
+}
+
+/* Username */
+.user-profile-section .name h3 {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  color: #f0f6fc;
+}
+
+/* Follow button */
+.follow-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #238636; /* GitHub green */
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.follow-btn:hover {
+  background-color: #2ea043;
+}
+
+/* Followers & Following */
+.follower {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.9rem;
+  color: #c9d1d9;
+}
+
+/* ---------------- HEATMAP SECTION ---------------- */
+.heat-map-section {
+  flex: 3;
+  min-width: 400px;
+  background: #161b22;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.heat-map-section h4 {
+  margin-bottom: 1rem;
+  color: #f0f6fc;
+}
+
+/* Custom HeatMap styles */
+.HeatMapProfile {
+  width: 100%;
+  overflow-x: auto; /* allows scroll if too wide */
+}
+
+/* ---------------- RESPONSIVE DESIGN ---------------- */
+@media (max-width: 900px) {
+  .profile-page-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .user-profile-section {
+    max-width: 100%;
+  }
+
+  .heat-map-section {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .profile-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .user-profile-section .name h3 {
+    font-size: 1.2rem;
+  }
+
+  .follow-btn {
+    width: 100%;
+  }
+}
